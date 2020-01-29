@@ -20,11 +20,11 @@
   width: 200px;
   padding-left: 20px;
 }
+
 #gifImage {
   padding-left: 50px;
 }
 
 #guest-Book {
-  width: 80px;
-  border-bottom: 1px solid black;
+  font-size: 15px;
 }
