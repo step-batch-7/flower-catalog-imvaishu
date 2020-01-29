@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+}
+
+.heading {
+  background-color: rgb(243, 243, 243);
+  border-top: 1px solid rgb(153, 153, 153);
+  border-bottom: 1px solid rgb(102, 101, 101);
+  color: rgb(224, 153, 70);
+  text-align: right;
+  padding-right: 200px;
+}
+
+.flowerImg {
+  width: 1000px;
+}
+
+.rightSide {
+  padding-top: 200px;
+  width: 200px;
+  padding-left: 20px;
+}
+#gifImage {
+  padding-left: 50px;
+}
+
+#guest-Book {
+  width: 80px;
+  border-bottom: 1px solid black;
+}
