@@ -23,8 +23,30 @@ const serveStaticPage = function(req, res) {
   res.end(content);
 };
 
+const convertToHtml = function(comment) {
+  return `
+  <div class="comment">
+    <h4>${comment.name}</h4>
+    <p>${comment.date}</p>
+    <p><pre>${comment.comment}</pre></p>
+  </div>`;
+};
+
+const updateToHtml = function(comments) {
+  const htmlComments = comments.map(convertToHtml);
+  return htmlComments.join("");
+};
+
+const updateDate = function(comment) {
+  comment.date = new Date(comment.date).toLocaleString();
+  return comment;
+};
+
 const serveGuestBookPage = function(req, res) {
-  const content = loadTemplate("guestBook.html", { comments: "" });
+  let comments = getComments();
+  comments = comments.map(updateDate);
+  comments = updateToHtml(comments);
+  const content = loadTemplate("guestBook.html", { comments });
   res.setHeader("Content-Type", `text/html`);
   res.setHeader("Content-Length", `${content.length}`);
   res.write(content);
