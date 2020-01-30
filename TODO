@@ -18,6 +18,7 @@ for (Abeliophyllum.html and Ageratum.html) => style.css
 ---------------------------------
 
 
-*guest-book (static page)
+--DONE--*guest-book (static page)
 *it will take name and comments and it should store query in json file.
+--DONE__add server
 
