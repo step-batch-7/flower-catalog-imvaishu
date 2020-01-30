@@ -1,8 +1,10 @@
 const fs = require("fs");
+const querystring = require("querystring");
 const { loadTemplate } = require("./lib/viewTemplate");
 
 const MIME_TYPES = require("./lib/mimeTypes");
 const STATIC_FOLDER = `${__dirname}/public`;
+const COMMENTS_STORE_PATH = `${__dirname}/data/comments.json`;
 
 const notFound = function(req, res) {
   res.writeHead(404, { "Content-Length": 0 });
@@ -29,7 +31,36 @@ const serveGuestBookPage = function(req, res) {
   res.end();
 };
 
+const getComments = function() {
+  if (!fs.existsSync(COMMENTS_STORE_PATH)) {
+    return [];
+  }
+  return JSON.parse(fs.readFileSync(COMMENTS_STORE_PATH, "utf-8"));
+};
+
+const addComment = function(query) {
+  let comments = getComments();
+  const date = new Date();
+  const comment = { name: query.name, date, comment: query.comment };
+  comments.unshift(comment);
+  comments = JSON.stringify(comments);
+  fs.writeFileSync(COMMENTS_STORE_PATH, comments, "utf-8");
+};
+
+const addCommentAndRedirect = function(req, res) {
+  let queryText = "";
+  req.on("data", chunk => (queryText += chunk));
+  req.on("end", () => {
+    const query = querystring.parse(queryText);
+    addComment(query);
+    res.writeHead(303, { location: "guestBook.html" });
+    res.end();
+  });
+};
+
 const findHandler = function(req) {
+  if (req.method === "POST" && req.url === "/comment")
+    return addCommentAndRedirect;
   if (req.method === "GET" && req.url === "/guestBook.html")
     return serveGuestBookPage;
   if (req.method === "GET") return serveStaticPage;
