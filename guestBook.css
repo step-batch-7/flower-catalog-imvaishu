@@ -1,0 +1,7 @@
+.heading {
+  background-color: rgb(243, 243, 243);
+  border-top: 1px solid rgb(153, 153, 153);
+  border-bottom: 1px solid rgb(102, 101, 101);
+  color: rgb(224, 153, 70);
+  text-align: center;
+}

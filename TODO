@@ -10,8 +10,14 @@
 --working--need to connect this pages to index.html----
 
 --DONE--* Abeliophyllum.html
-* Ageratum.html
+--DONE--* Ageratum.html
 
 for (Abeliophyllum.html and Ageratum.html) => style.css
 --DONE--1)Abeliophyllum.css
-2)Ageratum.css
+--DONE--2)Ageratum.css
+---------------------------------
+
+
+*guest-book (static page)
+*it will take name and comments and it should store query in json file.
+
