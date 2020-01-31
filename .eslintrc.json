@@ -97,7 +97,7 @@
   "overrides": [
     {
       "files": [
-        "test*.js",
+        "test/handlersTest.js",
         "public/scripts/hideCanForSec.js"
       ],
       "rules": {
