@@ -10,3 +10,10 @@
   font-family: sans-serif;
   font-weight: 100;
 }
+
+td{
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

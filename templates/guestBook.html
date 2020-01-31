@@ -1,29 +1,39 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="css/guestBook.css" />
-  </head>
-  <body>
-    <h1 class="heading">
-      <a href="index.html"><<</a> &nbsp; Guest &nbsp; Book
-    </h1>
-    <div>
-      <h2>Leave a comment</h2>
-    </div>
-    <div>
-      <form action="comment" method="POST">
-        <label>Name: </label>
-        <input type="text" name="name" />
-        <br />
-        <label>Comment: </label>
-        <textarea name="comment" cols="30" rows="5"></textarea>
-        <br />
-        <br />
-        <input type="submit" />
-      </form>
-    </div>
-    <hr />
-    <div class="comments">
-      __comments__
-    </div>
-  </body>
+
+<head>
+  <link rel="stylesheet" href="css/guestBook.css" />
+</head>
+
+<body>
+  <h1 class="heading">
+    <a href="index.html">
+      <<</a> &nbsp; Guest &nbsp; Book </h1> <div>
+        <h2>Leave a comment</h2>
+        </div>
+        <div>
+          <form action="comment" method="POST">
+            <label>Name: </label>
+            <input type="text" name="name" />
+            <br />
+            <label>Comment: </label>
+            <textarea name="comment" cols="30" rows="5"></textarea>
+            <br />
+            <br />
+            <input type="submit" />
+          </form>
+        </div>
+        <hr />
+        <div class="comments">
+          <table>
+            <tr>
+              <th>NAME</th>
+              <th>DATE</th>
+              <th>COMMENT</th>
+              __comments__
+            </tr>
+          </table>
+          <hr>
+        </div>
+</body>
+
 </html>
